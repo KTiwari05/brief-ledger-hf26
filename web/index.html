@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Turn client notes into a traceable scope and a human-priced draft estimate, using a local AI model.">
+  <title>Brief Ledger — scope before price</title><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="wordmark" href="/" aria-label="Brief Ledger home"><span class="mark">bl.</span> BRIEF LEDGER</a><span class="local-tag">LOCAL WORKSPACE <span id="runtime">Checking model…</span></span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">FOR INDEPENDENT WORK</p><h1>Agree on the work.<br><span>Then put a number on it.</span></h1><p class="lede">Turn a client's scattered notes into a scope you can trace, review, and price yourself.</p></div><aside class="intro-note"><span class="note-symbol">↳</span><p>Your notes stay on this computer.<br>Local AI drafts the scope.<br>You own every estimate.</p></aside></section>
+    <div class="workspace">
+      <section class="brief panel" aria-labelledby="brief-heading">
+        <div class="section-heading"><span class="step">01</span><div><h2 id="brief-heading">The client brief</h2><p>Paste the original request, including the messy bits.</p></div></div>
+        <form id="brief-form">
+          <label for="project">Project name</label><input id="project" maxlength="120" placeholder="e.g. Mira's bakery website" required>
+          <div class="label-row"><label for="notes">Client notes</label><span id="char-count">0 / 6,000</span></div>
+          <textarea id="notes" maxlength="6000" rows="12" placeholder="What did the client ask for? Keep exact quantities, exclusions, and anything they haven't decided yet." required></textarea>
+          <button type="button" class="text-button" id="sample">Use a fictional sample brief ↗</button>
+          <button class="primary full" id="extract" type="submit">Draft the scope <span>→</span></button>
+          <p class="small">No uploads, account, or cloud model. Notes are held in this tab and sent only to the local app and model.</p>
+        </form>
+        <div class="process-note"><strong>A quote is a conversation.</strong><p>Bring the missing details back to your client before agreeing on the work.</p></div>
+      </section>
+      <section class="review panel" aria-labelledby="review-heading">
+        <div class="section-heading"><span class="step">02</span><div><h2 id="review-heading">The scope ledger</h2><p>Check the work against the words it came from.</p></div><span id="draft-badge" class="badge">AWAITING BRIEF</span></div>
+        <p id="status" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p>
+        <div id="empty"><div class="ledger-illustration" aria-hidden="true"><span>CLIENT NOTE</span><i></i><i></i><i></i><b>↳</b><span>SCOPE ITEM + SOURCE</span><i></i><i></i></div><h3>A little clarity before the first quote.</h3><p>Each draft item comes with the client's exact words.<br>Read them, edit the task, then add your own hours.</p><ul><li>Requested work</li><li>Explicit exclusions</li><li>Questions worth asking</li></ul></div>
+        <div id="results" hidden>
+          <div class="result-meta"><span id="generation"></span><span>Source matched ≠ meaning approved</span></div>
+          <div class="list-heading"><h3>Requested work</h3><span>YOUR HOURS</span></div><div id="deliverables"></div>
+          <div id="exclusion-section" class="detail-section"><h3>Explicitly out of scope</h3><div id="exclusions"></div></div>
+          <div class="detail-section questions"><h3>Questions to resolve</h3><p class="small">AI suggestions. Edit or add up to five questions, one per line.</p><label class="visually-hidden" for="questions">Clarification questions</label><textarea id="questions" rows="3" placeholder="What still needs the client's answer?"></textarea></div>
+          <form id="quote-form">
+            <div class="pricing-head"><span class="step">03</span><h2>Your estimate</h2><span class="badge">YOU SET THE PRICE</span></div>
+            <div class="price-inputs"><div><label for="currency">Currency</label><select id="currency"><option>INR</option><option>USD</option><option>EUR</option><option>GBP</option></select></div><div><label for="rate">Your hourly rate</label><input id="rate" type="number" min="0.01" max="1000000" step="0.01" placeholder="e.g. 1500" required></div></div>
+            <label class="review-check"><input type="checkbox" id="reviewed" required><span>I reviewed every scope item, source quote, and open question.</span></label>
+            <button class="primary full" type="submit" id="calculate">Calculate draft estimate <span>→</span></button>
+          </form>
+          <div id="quote" hidden><div class="quote-total"><div><span>DRAFT TOTAL</span><strong id="total"></strong></div><button type="button" id="download" class="secondary">Download draft ↓</button></div><p class="small">Excludes taxes and third-party costs. Confirm open questions before agreement.</p><details><summary>Read the exported draft</summary><pre id="quote-preview"></pre></details></div>
+        </div>
+      </section>
+    </div>
+    <footer><span>BRIEF LEDGER <span class="footer-dot">/</span> Scope before price.</span><span>Drafts need judgment. Nothing is sent to your client.</span></footer>
+  </main>
+</body>
+</html>

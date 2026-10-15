@@ -1,0 +1,31 @@
+BRIEF LEDGER / DRAFT ESTIMATE
+Mira's bakery website
+
+SCOPE & ESTIMATE
+1. Build home page with story and opening hours
+   4 h x INR 1500.00 = INR 6000.00
+   Client note: I run Mira's bakery and need a small website. Please build a home page with our story and opening hours
+2. Build menu page with up to 12 items
+   3 h x INR 1500.00 = INR 4500.00
+   Client note: a menu page with up to 12 items
+3. Build contact page with address and phone number
+   2 h x INR 1500.00 = INR 3000.00
+   Client note: a contact page with our address and phone number
+4. Mobile responsive design
+   3 h x INR 1500.00 = INR 4500.00
+   Client note: The website must work on phones.
+
+TOTAL: INR 18000.00
+Taxes and third-party costs are not included.
+
+EXPLICIT EXCLUSIONS
+- Online ordering and payments (Client note: We do not need online ordering or payments in this version.)
+
+QUESTIONS TO CONFIRM BEFORE AGREEMENT
+- What exact launch date should we work toward?
+- How many revision rounds are included?
+- Should the newsletter stay outside this version?
+
+Human-reviewed draft. Hours and rate were entered by the freelancer.
+Source quotes were matched to the notes; their interpretation still needs human review.
+Confirm scope and open questions with the client before agreement.

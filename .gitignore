@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.tools/
+.env
+node_modules/
+test-results/
+submission/demo/frames/
